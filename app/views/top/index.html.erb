@@ -1,0 +1,57 @@
+<main class="top">
+    <div class="logo">
+        <%= image_tag 'logo2.png', class:'icon' %>
+        <h1>Welcome to Study</h1>
+        <p>Studyは試験勉強に励む学生が<br>お互いを高めあうお手伝いをします</p>
+    </div>
+
+    <!-- ボタンクリック後の移動先をまだ設定していないです -->
+
+    <div class="subject">
+        <div class="subject_box">
+            <div class="overview">
+                <h1 class="subject_name">基本情報技術者試験（科目A）</h1>
+                <div class="detail">
+                    <p>試験時間：90分</p>
+                    <p>出題形式：多肢選択式（四肢択一）</p>
+                    <p>問題数　：60問</p>
+                </div>
+            </div>
+            <div class="btn_top">
+                <%= button_to '出題開始', top_index_path, method: :get, class: 'question_btn' %>
+                <%= button_to '問題一覧', top_index_path, method: :get, class: 'List_btn' %>
+            </div>
+        </div>
+
+        <div class="subject_box">
+            <div class="overview">
+                <h1 class="subject_name">基本情報技術者試験（科目B）</h1>
+                <div class="detail">
+                    <p>試験時間：100分</p>
+                    <p>出題形式：多肢選択式</p>
+                    <p>問題数　：20問</p>
+                </div>
+            </div>
+            <div class="btn_top">
+                <%= button_to '出題開始', top_index_path, method: :get, class: 'question_btn' %>
+                <%= button_to '問題一覧', top_index_path, method: :get, class: 'List_btn' %>
+            </div>
+        </div>
+
+        <div class="subject_box">
+            <div class="overview">
+                <h1 class="subject_name">Ruby Silver</h1>
+                <div class="detail">
+                    <p>試験時間：90分</p>
+                    <p>出題形式：多肢選択式</p>
+                    <p>問題数　：50問</p>
+                </div>
+            </div>
+            <div class="btn_top">
+                <%= button_to '出題開始', top_index_path, method: :get, class: 'question_btn' %>
+                <%= button_to '問題一覧', top_index_path, method: :get, class: 'List_btn' %>
+            </div>
+        </div>
+    </div>
+
+</main>
