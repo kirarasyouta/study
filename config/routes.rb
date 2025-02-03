@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'top/index'
+  root 'top#index'
   
-  resources :top
+  get 'top/index', to: 'top#index'
+
+  resources :questions, only: [:new, :create, :show]
 end
