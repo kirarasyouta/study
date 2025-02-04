@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   
   get 'top/index', to: 'top#index'
 
-  resources :questions, only: [:new, :create, :show]
+  resources :questions, only: [:new, :create, :show, :edit, :update]
 end
