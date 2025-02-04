@@ -1,6 +1,6 @@
 <main class="list">
     <div class="center">
-        <p class="current">基本情報技術者試験（A試験）/問題一覧</p>
+        <p class="current"><%= @title %>/<%= @title2 %></p>
 
         <div class="list_box">
             <div class="box_left">
@@ -13,12 +13,12 @@
             <div class="box_right">
                 <p>登録日：2024.06.27</p>
                 <p>登録者：BE</p>
-                <%= button_to '▶プレビュー', list_testA_path, method: :get, class: 'preview_btn' %>
+                <%= button_to '▶プレビュー', preview_prevQ_path, method: :get, class: 'preview_btn', params: { action_type: 'prev' } %>
             </div>
         </div>
 
 
         <!-- ボタンクリック後の移動先をまだ設定していないです -->
-        <%= button_to '問題を作る', list_testA_path, method: :get, class: 'create_btn' %>
+        <%= button_to '問題を作る', list_testA_path, method: :get, class: 'create_btn', params: { action_type: 'createQ' } %>
     </div>
 </main>
