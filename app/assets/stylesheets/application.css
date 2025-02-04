@@ -2,6 +2,8 @@
 
 html {height: 100%;}
 
+html {height: 100%;}
+
 /* header */
 .header {
     height: 100px;
@@ -216,8 +218,6 @@ body {
     margin: 10px 10px 5px 20px;
     border-radius: 50px;
 }
-<<<<<<< HEAD
-=======
 
 
 /*////////////////////////////////////////////*/
@@ -347,6 +347,3 @@ body {
     border-radius: 50px;
 }
 
-
-
->>>>>>> 10f3437fd93eb875efe966c970fe8e3b352fcb21
