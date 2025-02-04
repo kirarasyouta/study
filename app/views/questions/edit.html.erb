@@ -1,0 +1,54 @@
+<main>
+    <div class="question-form-wrapper">
+        <%= form_with model: @question, local: true do |form| %>
+          <div class="form-group">
+            <%= form.label :name, "登録者", class: "label-blue" %><br>
+            <%= form.text_field :name, placeholder: "登録者を入力", class: "text-input" %>
+          </div>
+    
+          <div class="form-group">
+            <%= form.label :title, "ジャンル", class: "label-blue" %><br>
+            <%= form.text_field :title, placeholder: "ジャンルを入力", class: "text-input" %>
+          </div>
+    
+          <div class="form-group">
+            <%= form.label :question_text, "問題文", class: "label-blue" %><br>
+            <%= form.text_area :question_text, placeholder: "問題文を入力", class: "text-input" %>
+          </div>
+    
+          <% letters = ["ア","イ","ウ","エ"] %>
+    
+          <fieldset class="form-group">
+            <legend>選択肢</legend>
+            <%= form.fields_for :options do |option_form| %>
+              <% i = option_form.index %>
+              <div class="form-group">
+                <%= option_form.label :content, "選択肢：#{letters[i]}", class: "label-blue" %><br>
+                <%= option_form.text_field :content, placeholder: "選択肢を入力", class: "text-input" %>
+              </div>
+            <% end %>
+          </fieldset>
+    
+          <fieldset class="form-group">
+            <legend class="label-blue">解答</legend>
+            <% @question.options.each_with_index do |option, index| %>
+              <label class="radio-button">
+                <%= radio_button_tag "correct_option", index, option.answers %>
+                <span class="label-blue"><%= letters[index] %></span>
+              </label>
+            <% end %>
+          </fieldset>
+    
+          <div class="form-group">
+            <%= form.label :explanation, "解説", class: "label-blue" %><br>
+            <%= form.text_area :explanation, placeholder: "解説を入力", class: "text-input" %>
+          </div>
+    
+          <div class="button-group">
+            <%= link_to "中止する", "#", id: "cancel-btn", class: "button-tyuusi" %>
+            <%= form.submit "上書きして保存", class: "button" %>
+          </div>
+    
+        <% end %>
+    </div>
+</main>

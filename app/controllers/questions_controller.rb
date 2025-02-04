@@ -1,17 +1,14 @@
 class QuestionsController < ApplicationController
   def new
     @question = Question.new
-    # 新規作成画面で4つの選択肢をあらかじめ作っておく
     4.times { @question.options.build }
   end
 
   def create
     @question = Question.new(question_params)
 
-    # ラジオボタン（correct_option）で選択された選択肢のインデックス
     correct_option_index = params[:correct_option].to_i
 
-    # 選択肢をループし、選ばれたインデックスだけ answers = true に
     @question.options.each_with_index do |option, index|
       option.answers = (index == correct_option_index)
     end
@@ -24,21 +21,44 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # 確認用にshowを定義しておくと便利
   def show
     @question = Question.find(params[:id])
   end
+
+  # 更新画面
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.assign_attributes(question_params)
+  
+    correct_option_index = params[:correct_option].to_i
+  
+    @question.options.each_with_index do |option, i|
+      option.answers = (i == correct_option_index)
+    end
+  
+    if @question.save
+      redirect_to @question, notice: "問題を更新しました。"
+    else
+      flash.now[:alert] = "入力されていない項目があります"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+  
 
   private
 
   def question_params
     params.require(:question).permit(
-      :title,
       :name,
+      :title,
       :question_text,
       :explanation,
-      # Options（content）はフォームから入力される
-      options_attributes: [:content, :id]
+      options_attributes: [:id, :content]
     )
-  end
+  end  
 end
