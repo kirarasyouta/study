@@ -1,6 +1,8 @@
 /* reset-css */
 @import "destyle";
 
+html {height: 100%;}
+
 /* header */
 .header {
     height: 100px;
@@ -19,9 +21,14 @@
 }
 
 /* main */
-main {
+body {
     height: 100%;
     background: linear-gradient(#EAEFF3, #BBC8D8);
+}
+
+.current {
+    color: #14518E;
+    margin: 20px 0 20px 15px;
 }
 
 
@@ -157,7 +164,6 @@ main {
 /*////////////////////////////////////////////*/
 
 /* top */
-p {color: #14518E;}
 .top {
     display: flex;
     justify-content: center;
@@ -211,3 +217,137 @@ p {color: #14518E;}
     margin: 10px 10px 5px 20px;
     border-radius: 50px;
 }
+<<<<<<< HEAD
+=======
+
+
+/*////////////////////////////////////////////*/
+
+/* list */
+
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.list_box {
+    display: flex;
+    background-color: #14518E;
+    margin: 20px;
+    border-radius: 10px;
+    width: 900px;
+}
+
+.list_box p {
+    color: #ffffff;
+}
+
+.left_top{
+    display: flex;
+}
+
+.box_left {
+    margin: 15px 0 0 0;
+    width: 695px;
+}
+
+.left_top h1 {
+    color: #ffffff;
+    background-color: #C59650;
+    padding: 7px 20px;
+}
+
+.left_top h2 {
+    color: #ffffff;
+    padding: 7px 20px;
+}
+
+.box_left p {
+    color: #BBC8D8;
+    padding: 10px 0 0 20px;
+    font-size: 15px;
+}
+
+.box_right {
+    margin: 15px;
+    padding: 5px 0 0 10px;
+    border-left: 3px solid #ffffff;
+    width: 169px;
+    float: right;
+}
+
+
+.preview_btn {
+    background-color: #BBC8D8;
+    color: #14518E;
+    padding: 7px 30px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 50px;
+}
+
+.create_btn {
+    background-color: #C59650;
+    color: #ffffff;
+    width: 150px;
+    height: 150px;
+    padding: 7px 30px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 100px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+}
+
+
+/*////////////////////////////////////////////*/
+
+/* preview */
+
+.prev_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.list_btn {
+    background-color: #ffffff;
+    color: #14518E;
+    padding: 10px 30px;
+    margin: 20px;
+    border-radius: 50px;
+    justify-content: flex-start;
+}
+
+.btn_right {
+    display: flex;
+}
+
+.answer_btn {
+    background-color: #14518E;
+    color: #ffffff;
+    padding: 10px 30px;
+    margin: 20px 10px;
+    border-radius: 50px;
+}
+
+.edit_btn {
+    background-color: #C59650;
+    color: #ffffff;
+    padding: 10px 30px;
+    margin: 20px 10px;
+    border-radius: 50px;
+}
+
+.delete_btn {
+    background-color: #8E1414;
+    color: #ffffff;
+    padding: 10px 30px;
+    margin: 20px 10px;
+    border-radius: 50px;
+}
+
+
+
+>>>>>>> 10f3437fd93eb875efe966c970fe8e3b352fcb21
