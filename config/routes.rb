@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'top#index'
   get 'top/index'
   get 'list/testA'
   get 'list/testB'
@@ -7,5 +8,7 @@ Rails.application.routes.draw do
   get 'preview/prevA'
   get 'preview/delete'
   
-  resources :top
+  get 'top/index', to: 'top#index'
+
+  resources :questions, only: [:new, :create, :show, :edit, :update]
 end
