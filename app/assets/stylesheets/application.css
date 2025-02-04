@@ -12,13 +12,15 @@
 }
 .btn-home {
     background-color: #C59650;
-    padding: 10px 20px;
+    padding: 10px 30px;
     margin: 20px;
+    border-radius: 50px;
+    color: #ffffff;
 }
 
 /* main */
 main {
-    height: 500px;
+    height: 100%;
     background: linear-gradient(#EAEFF3, #BBC8D8);
 }
 
@@ -53,8 +55,6 @@ main {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
     margin: 5px;
-    user-select: none;
-    -webkit-user-select: none;
     border-radius: 5px;
     text-align: center;
 }
@@ -153,4 +153,61 @@ main {
 
 .label-blue {
     color: #0063ce;
+}
+/*////////////////////////////////////////////*/
+
+/* top */
+p {color: #14518E;}
+.top {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    margin: 40px;
+    text-align: center;
+}
+.logo h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.icon {width: 250px;}
+
+.subject_box {
+    display: flex;
+    background-color: #14518E;
+    padding: 10px 20px;
+    margin: 20px 0 0 20px;
+    border-radius: 10px;
+}
+
+.subject_name {
+    font-size: 20px;
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 3px;
+    margin: 5px;
+    width: 350px;
+    font-weight: bold;
+}
+
+.overview {width: 400px;}
+
+.detail {margin: 10px 0 0 20px;}
+
+.detail p {color: #ffffff;}
+
+.question_btn {
+    background-color: #C59650;
+    color: #ffffff;
+    padding: 7px 30px;
+    margin: 40px 10px 0px 20px;
+    border-radius: 50px;
+}
+.List_btn {
+    background-color: #ffffff;
+    color: #14518E;
+    padding: 7px 30px;
+    margin: 10px 10px 5px 20px;
+    border-radius: 50px;
 }
