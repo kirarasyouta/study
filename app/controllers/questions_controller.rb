@@ -48,7 +48,15 @@ class QuestionsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
+  #項目
+  def prevQ
+    prevpanlist
+  end
+
+  def prevA
+    prevpanlist
+  end
 
   private
 
@@ -61,4 +69,21 @@ class QuestionsController < ApplicationController
       options_attributes: [:id, :content]
     )
   end  
+
+  def prevpanlist
+    case params[:action_type]
+      #///////////////////ここから問題一覧内のボタン////////////////
+
+      when 'createQ'
+        @@message2 = '問題作成'
+      when 'prevQ'
+        @@message2 = '問題詳細'
+      when 'prevA'
+        @@message2 = '解答詳細'
+
+      #//////////////////////////////////////////////////////////
+
+     
+    end
+  end
 end

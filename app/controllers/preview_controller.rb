@@ -1,10 +1,10 @@
 class PreviewController < ApplicationController
-    def prevQ
+      def prevQ
         prevpanlist
       end
 
       def prevA
-      prevpanlist
+        prevpanlist
       end
 
       private
@@ -25,10 +25,11 @@ class PreviewController < ApplicationController
     
          
         end
+          @question = Question.find(params[:id])
           puts @@message
           @title = @@message
           @title2 = @@message2
-    end
+      end
       
     
 end
