@@ -18,6 +18,10 @@ html {min-height: 100%;}
     border-radius: 50px;
     color: #ffffff;
 }
+.topicon {
+    height: 50px;
+    justify-content: left;
+}
 
 /* main */
 body {
@@ -304,6 +308,9 @@ body {
 .prev_btn {
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 
@@ -345,3 +352,12 @@ body {
     border-radius: 50px;
 }
 
+.Q_box {
+    background-color: #BBC8D8;
+    color: #14518e;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 300px;
+    width: 1000px;
+}
