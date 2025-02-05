@@ -1,0 +1,82 @@
+
+<main>        
+        <p><strong>基本情報技術者試験（A試験） / 試験実施</strong></p>
+
+        <!-- 第1問 -->
+        <div class="question-box" id="question1">
+            <p><strong>第1問</strong></p>
+            <p>仮想記憶機能を持つパソコンで表計算ソフトを使用中にワープロソフトを使用しようとしたところ、
+                メモリ不足が原因で起動できなかった。根本的な解決はメモリ増設であるが、それまでの対応として、
+                有効な手段はどれか。</p>
+            <div class="options">
+                <label class="option" onclick="selectOption(this, 'answer1')"><input type="radio" name="answer1" value="ア"> ア </label> <e>仮想記憶の大きさの設定値を増やす。</e>
+                <label class="option" onclick="selectOption(this, 'answer1')"><input type="radio" name="answer1" value="イ"> イ </label> <e>磁気ディスク上の不要なファイルを削除する。</e>
+                <label class="option" onclick="selectOption(this, 'answer1')"><input type="radio" name="answer1" value="ウ"> ウ </label> <e>接続してある周辺機器を外す。</e>
+                <label class="option" onclick="selectOption(this, 'answer1')"><input type="radio" name="answer1" value="エ"> エ </label> <e>ワークシート中の未使用の列は、表示しないようにする。</e>
+            </div>
+            <div class="button-container">
+                <button class="submit-button" onclick="showAnswer(1)">回答する</button>
+            </div>
+        </div>
+
+        <!-- 第1問 解説 -->
+        <div class="answer-explanation" id="answer-explanation1">
+            <p><strong>回答: ア</strong></p>
+            <p>仮想記憶の大きさの設定を増やすことで、メモリ不足の問題を解消する可能性が高いです。</p>
+            <div class="button-container">
+                <button class="submit-button" onclick="nextQuestion()">次の問題へ</button>
+            </div>
+        </div>
+
+        <!-- 第2問 -->
+        <div class="question-box" id="question2" style="display: none;">
+            <p><strong>第2問</strong></p>
+            <p>仮想記憶機能の設定を変更することで、メモリ不足の問題を解決できる可能性がある。
+                どの設定を変更すべきか。</p>
+            <div class="options">
+                <label class="option" onclick="selectOption(this, 'answer2')"><input type="radio" name="answer2" value="ア"> ア </label> ページングファイルのサイズを増やす。
+                <label class="option" onclick="selectOption(this, 'answer2')"><input type="radio" name="answer2" value="イ"> イ </label> ディスクのデフラグを行う。
+                <label class="option" onclick="selectOption(this, 'answer2')"><input type="radio" name="answer2" value="ウ"> ウ </label> インデックス検索を無効にする。
+                <label class="option" onclick="selectOption(this, 'answer2')"><input type="radio" name="answer2" value="エ"> エ </label> ネットワーク共有フォルダを減らす。
+            </div>
+            <div class="button-container">
+                <button class="submit-button" onclick="showAnswer(2)">回答する</button>
+            </div>
+        </div>
+
+        <!-- 第2問 解説 -->
+        <div class="answer-explanation" id="answer-explanation2" style="display: none;">
+            <p><strong>回答: ア</strong></p>
+            <p>ページングファイルのサイズを増やすことで、仮想メモリを拡張し、メモリ不足を緩和できます。</p>
+        </div>
+
+        
+                
+    
+</main>
+<script href="application.js"></script>
+    # <script>
+    #     function selectOption(element, name) {
+    #         document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+    #             input.parentElement.classList.remove('selected');
+    #         });
+    #         element.classList.add('selected');
+    #         element.querySelector('input').checked = true;
+    #     }
+
+    #     function showAnswer(questionNumber) {
+    #         const selectedOption = document.querySelector(`input[name="answer${questionNumber}"]:checked`);
+    #         if (!selectedOption) {
+    #             alert("回答が選択されていません！");
+    #             return;
+    #         }
+    #         document.getElementById(`answer-explanation${questionNumber}`).style.display = "block";  
+    #         document.getElementById(`question${questionNumber}`).style.display = "none";  
+    #     }
+
+    #     function nextQuestion() {
+    #         document.getElementById("answer-explanation1").style.display = "none";  
+    #         document.getElementById("question2").style.display = "block";  
+    #     }
+    # </script>
+

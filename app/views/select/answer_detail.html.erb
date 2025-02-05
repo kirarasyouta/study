@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本情報技術者試験</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #dce4ed, #aebccf);
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            padding-bottom: 30px;
+        }
+        h2 {
+            background-color: #34568B;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            margin-top: 0;
+        }
+        .question-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .option.selected {
+            background-color: #f39c12;
+            color: white;
+            border-color: #e67e22;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit-button {
+            background-color: #f39c12;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .answer-explanation {
+            background-color: #f1c40f;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Study</h2>
+        <p><strong>基本情報技術者試験（A試験） / 試験実施</strong></p>
+
+        <!-- 第1問 -->
+        <div class="question-box" id="question1">
+            <p><strong>第1問</strong></p>
+            <p>仮想記憶機能を持つパソコンで表計算ソフトを使用中にワープロソフトを使用しようとしたところ、
+                メモリ不足が原因で起動できなかった。根本的な解決はメモリ増設であるが、それまでの対応として、
+                有効な手段はどれか。</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="answer1" value="ア"> ア 仮想記憶の大きさの設定値を増やす。</label>
+                <label class="option"><input type="radio" name="answer1" value="イ"> イ 磁気ディスク上の不要なファイルを削除する。</label>
+                <label class="option"><input type="radio" name="answer1" value="ウ"> ウ 接続してある周辺機器を外す。</label>
+                <label class="option"><input type="radio" name="answer1" value="エ"> エ ワークシート中の未使用の列は、表示しないようにする。</label>
+            </div>
+        </div>
+
+        <!-- 第1問 解説 -->
+        <div class="answer-explanation" id="answer-explanation1">
+            <p><strong>回答: ア</strong></p>
+            <p>仮想記憶の大きさの設定を増やすことで、メモリ不足の問題を解消する可能性が高いです。</p>
+            <div class="button-container">
+                <button class="submit-button" onclick="nextQuestion()">次の問題へ</button>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="submit-button" onclick="showAnswer(1)">回答する</button>
+        </div>
+
+        <!-- 第2問 -->
+        <div class="question-box" id="question2" style="display: none;">
+            <p><strong>第2問</strong></p>
+            <p>仮想記憶機能の設定を変更することで、メモリ不足の問題を解決できる可能性がある。
+                どの設定を変更すべきか。</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="answer2" value="ア"> ア ページングファイルのサイズを増やす。</label>
+                <label class="option"><input type="radio" name="answer2" value="イ"> イ ディスクのデフラグを行う。</label>
+                <label class="option"><input type="radio" name="answer2" value="ウ"> ウ インデックス検索を無効にする。</label>
+                <label class="option"><input type="radio" name="answer2" value="エ"> エ ネットワーク共有フォルダを減らす。</label>
+            </div>
+        </div>
+
+        <!-- 第2問 解説 -->
+        <div class="answer-explanation" id="answer-explanation2" style="display: none;">
+            <p><strong>回答: ア</strong></p>
+            <p>ページングファイルのサイズを増やすことで、仮想メモリを拡張し、メモリ不足を緩和できます。</p>
+        </div>
+
+        <div class="button-container">
+            <button class="submit-button" onclick="showAnswer(2)">回答する</button>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(questionNumber) {
+            const selectedOption = document.querySelector(`input[name="answer${questionNumber}"]:checked`);
+            if (!selectedOption) {
+                alert("回答が選択されていません！");
+                return;
+            }
+            document.getElementById(`answer-explanation${questionNumber}`).style.display = "block";  
+            document.getElementById(`question${questionNumber}`).style.display = "none";  
+        }
+
+        function nextQuestion() {
+            document.getElementById("answer-explanation1").style.display = "none";  
+            document.getElementById("question2").style.display = "block";  
+        }
+    </script>
+</body>
+</html>
