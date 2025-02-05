@@ -32,6 +32,7 @@ class ListController < ApplicationController
 
       
     end
+    @questions = Question.all
       puts @@message
       @title = @@message
       @title2 = @@message2

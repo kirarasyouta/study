@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'preview/delete'
   
   get 'top/index', to: 'top#index'
+  get 'preview/prevQ/:id', to: 'preview#prevQ', as: :preview_question
 
   resources :questions, only: [:new, :create, :show, :edit, :update]
 end

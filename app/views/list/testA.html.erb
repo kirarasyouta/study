@@ -1,24 +1,29 @@
 <main class="list">
-    <div class="center">
-        <p class="current"><%= @title %>/<%= @title2 %></p>
+  <div class="center">
+    <p class="current"><%= @title %>/<%= @title2 %></p>
 
-        <div class="list_box">
-            <div class="box_left">
-                <div class="left_top">
-                    <h1>ジャンル名</h1>
-                    <h2>正答率：〇％</h2>
-                </div>
-                <p>▶ここに問題文の一部が入るのだ。文末は…ここの長さで幅変わってる？？やっぱそうらしい。改行は？されてるね。改善しましたので長さ固定できました。</p>
-            </div>
-            <div class="box_right">
-                <p>登録日：2024.06.27</p>
-                <p>登録者：BE</p>
-                <%= button_to '▶プレビュー', preview_prevQ_path, method: :get, class: 'preview_btn', params: { action_type: 'prev' } %>
-            </div>
+    <% @questions.each do |question| %>
+
+      <div class="list_box">
+        <div class="box_left">
+          <div class="left_top">
+            <h1><%= question.title %></h1>
+            <h2>正答率：〇％</h2>
+          </div>
+          <p>▶<%= question.question_text.truncate(50) %></p>
         </div>
 
+        <div class="box_right">
+          <p>登録日：<%= question.created_at.strftime('%Y.%m.%d') %></p>
 
-        <!-- ボタンクリック後の移動先をまだ設定していないです -->
-        <%= button_to '問題を作る', list_testA_path, method: :get, class: 'create_btn', params: { action_type: 'createQ' } %>
-    </div>
+          <p>登録者：<%= question.name %></p>
+
+            <%= button_to '▶プレビュー', preview_question_path(question), method: :get, class: 'preview_btn' %>
+        </div>
+      </div>
+
+    <% end %>
+
+    <%= button_to '問題を作る', new_question_path, method: :get, class: 'create_btn', params: { action_type: 'createQ' } %>
+  </div>
 </main>
