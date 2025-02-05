@@ -1,0 +1,24 @@
+<main>
+  <h2>タイトル: <%= @question.title %></h2>
+  <p>登録者: <%= @question.name %></p>
+  <p>問題文: <%= @question.question_text %></p>
+
+  <hr>
+
+  <h3>選択肢</h3>
+  <ul>
+    <% @question.options.each_with_index do |option, index| %>
+      <li>
+        <%= ('ア'..'エ').to_a[index] %>: <%= option.content %>
+        <% if option.answers %>
+          <strong>（正解）</strong>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <h3>解説</h3>
+  <p><%= @question.explanation %></p>
+</main>

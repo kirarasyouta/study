@@ -1,9 +1,5 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
-
-    // app/javascript/application.js
-// app/javascript/application.js
 
 window.selectOption = function(element, name) {
     document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
@@ -37,3 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const cancelBtn = document.getElementById("cancel-btn");                     
+    const cancelModal = document.getElementById("cancel-modal");                 
+    const cancelConfirmButton = document.getElementById("cancel-confirm-button"); 
+    const cancelCloseButton = document.getElementById("cancel-close-button");     
+
+    cancelBtn.addEventListener("click", function(e) {
+        e.preventDefault(); 
+        cancelModal.style.display = "block";
+    });
+
+    cancelConfirmButton.addEventListener("click", function() {
+        window.location.href = "../top/index";
+    });
+
+    cancelCloseButton.addEventListener("click", function() {
+        cancelModal.style.display = "none";
+    });
+});

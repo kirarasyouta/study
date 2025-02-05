@@ -1,0 +1,14 @@
+<main class="prev">
+    <p class="current"><%= @title %>/<%= @title2 %></p>
+    <p>aiueo</P>
+    <div class="prev_btn">
+        <%= button_to '問題一覧へ', list_testA_path, method: :get, class: 'list_btn', params: { action_type: 'prev' } %>
+        <div class="btn_right">
+            <%= button_to '▶解答', preview_prevA_path, method: :get, class: 'answer_btn', params: { action_type: 'prevA' } %>
+            <%= button_to '▶編集', list_testA_path, method: :get, class: 'edit_btn', params: { action_type: 'prev' } %>
+            <%= button_to '▶削除', preview_delete_path, method: :get, class: 'delete_btn', params: { action_type: 'prev' } %>
+        </div>
+    </div>
+</main>
+
+<!-- 問題一覧ボタン、編集ボタン、削除ボタンの移行先等未 -->

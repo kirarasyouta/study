@@ -1,0 +1,69 @@
+<main>
+  <div class="question-form-wrapper">
+    <%= form_with model: @question, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :name, "登録者", class: "label-blue" %>
+        <%= form.text_field :name, placeholder: "名前を入力してください。", class: "text-input" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :title, "ジャンル", class: "label-blue" %><br>
+        <%= form.text_field :title, placeholder: "ジャンルを入力してください。", class: "text-input" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :question_text, "問題文", class: "label-blue" %><br>
+        <%= form.text_area :question_text, placeholder: "問題を入力してください。", class: "text-input" %>
+      </div>
+
+      <% letters = ["ア","イ","ウ","エ"] %>
+      <fieldset class="form-group">
+        <%= form.fields_for :options do |option_form| %>
+          <% i = option_form.index %>
+          <div class="form-group">
+            <%= option_form.label :content, "選択肢：" + letters[i], class: "label-blue" %><br>
+            <%= option_form.text_field :content, placeholder: "選択項目を入力してください。", class: "text-input" %>
+          </div>
+        <% end %>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <legend class="label-blue">解答</legend>
+        <% @question.options.each_with_index do |option, index| %>
+          <label class="radio-button">
+            <%= radio_button_tag "correct_option", index %>
+            <span class="label-blue"><%= letters[index] %></span>
+          </label>
+        <% end %>
+      </fieldset>
+
+      <div class="form-group">
+        <%= form.label :explanation, "解説", class: "label-blue" %><br>
+        <%= form.text_area :explanation, placeholder: "解説を入力してください。", class: "text-input" %>
+      </div>
+
+      <div class="button-group">
+        <%= link_to "中止する", "#", id: "cancel-btn", class: "button-tyuusi" %>
+        <%= form.submit "▶登録", class: "button" %>
+      </div>
+
+      <% if flash[:alert].present? %>
+        <div class="error-message">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="cancel-modal" class="modal">
+    <div class="modal-content">
+      <h2>注意</h2>
+      <hr>
+      <p>入力された内容が破棄されます。<br>よろしいですか？</p>
+      <div class="modal-buttons">
+        <button id="cancel-confirm-button" class="button-tyuusi">中止する</button>
+        <button id="cancel-close-button" class="button">キャンセル</button>
+      </div>
+    </div>
+  </div>
+</main>
